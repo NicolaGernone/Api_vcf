@@ -16,6 +16,9 @@ makemigrations:
 loaddata:
 	docker compose run --rm api python manage.py loaddata data.json
 
+loaddatavcf:
+	docker compose run --rm api python manage.py loaddatavcf "NA12877_API_10.vcf.gz"
+
 deps:
 	docker compose run --rm api poetry install
 
