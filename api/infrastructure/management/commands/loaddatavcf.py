@@ -1,6 +1,7 @@
-from django.core.management.base import BaseCommand, CommandError
-from api.application.domain.entity.vcf_entity import Data
+from db.populate_db import db_load
 from db.vcf_reader import read_vcf_data
+from django.core.management.base import BaseCommand, CommandError
+
 
 class Command(BaseCommand):
     help = 'load all the vcf data in the Data Base'
@@ -10,13 +11,8 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         try:
-            vcf_data, vcf_names = read_vcf_data(options['vcf_path'][0]) 
-            for i in vcf_data:
-                print(i)
+            db_load(options['vcf_path'][0]) 
         except IOError:
             raise CommandError('File does not exist')
-
-        ##poll.opened = False
-        ##poll.save()
 
         self.stdout.write(self.style.SUCCESS('Successfully closed'))
