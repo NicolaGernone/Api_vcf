@@ -2,11 +2,11 @@ from .models import Data
 from api.application.domain.serializers import ResponseSerializer
 from django.http import Http404
 from rest_framework.views import APIView
-from django.http import JsonResponse
+from rest_framework.response import Response
 from rest_framework import status
 
 
-class SnippetDetail(APIView):
+class ApiClient(APIView):
     """
     Retrieve, update or delete a snippet instance.
     """
