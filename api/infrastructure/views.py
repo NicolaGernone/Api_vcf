@@ -1,5 +1,5 @@
 from .models import Data
-from api.application.domain.serializers import ResponseSerializer
+from api.application.domain.serializers.response_serializer import ResponseSerializer
 from django.http import Http404
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -10,7 +10,7 @@ class ApiClient(APIView):
     """
     Retrieve, update or delete a snippet instance.
     """
-    def get_object(self, pk):
+    """def get_object(self, pk):
         try:
             return Snippet.objects.get(pk=pk)
         except Snippet.DoesNotExist:
@@ -33,3 +33,4 @@ class ApiClient(APIView):
         snippet = self.get_object(pk)
         snippet.delete()
         return JsonResponse(status=status.HTTP_204_NO_CONTENT)
+"""

@@ -8,7 +8,7 @@ def db_load(path):
         for d in data:
             records, created = Data.objects.get_or_create(chrom=d[0],
                                                             pos=d[1],
-                                                            id=d[2],
+                                                            id_data=d[2],
                                                             ref=d[3],
                                                             alt=d[4],
                                                             qual=d[5],

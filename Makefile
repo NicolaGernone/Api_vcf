@@ -13,6 +13,9 @@ migrate:
 makemigrations:
 	docker compose run --rm api python manage.py makemigrations
 
+showmig: 
+	docker compose run --rm api python manage.py showmigrations
+
 loaddata:
 	docker compose run --rm api python manage.py loaddata data.json
 

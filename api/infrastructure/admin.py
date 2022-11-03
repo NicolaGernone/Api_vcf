@@ -5,4 +5,4 @@ from .models import *
 
 @admin.register(Data)
 class ImageAdmin(admin.ModelAdmin):
-    list_display=('chrom', 'pos', 'alt', 'ref', "id")
+    list_display=('chrom', 'pos', 'alt', 'ref', "id_data")
