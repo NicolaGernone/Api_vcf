@@ -10,7 +10,7 @@ class ApiClient(APIView):
     """
     Retrieve, update or delete a snippet instance.
     """
-    """def get_object(self, pk):
+    def get_object(self, pk):
         try:
             return Snippet.objects.get(pk=pk)
         except Snippet.DoesNotExist:
@@ -33,4 +33,3 @@ class ApiClient(APIView):
         snippet = self.get_object(pk)
         snippet.delete()
         return JsonResponse(status=status.HTTP_204_NO_CONTENT)
-"""
