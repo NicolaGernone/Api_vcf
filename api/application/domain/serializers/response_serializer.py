@@ -5,4 +5,4 @@ class DataSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Data
-        fields = ['chrom', 'pos', 'id', 'ref', 'alt', 'qual', 'filter', 'info', 'format', 'nas']
+        fields = ['chrom', 'pos', 'id_data', 'ref', 'alt', 'qual', 'filter', 'info', 'format', 'nas']
