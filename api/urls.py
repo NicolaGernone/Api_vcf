@@ -1,11 +1,16 @@
 from django.urls import path
-from api.infrastructure.views import ApiClient
 from django.views.generic import TemplateView
+from rest_framework.authtoken import views
+
+from api.infrastructure.views import ApiClient
 
 app_name = 'api'
 
 urlpatterns = [
     path('', TemplateView.as_view(template_name="home.html"), name="home"),
-    path('data', ApiClient.as_view(), name="get_data"),
-    path('data/<str:imageId>', ApiClient.as_view())
+    path('data/<str:id>', ApiClient.as_view(), name="get_data"),
+    path('data/update', ApiClient.as_view()),
+    path('data/update/<str:id>', ApiClient.as_view()),
+    path('data/delete/<str:id>', ApiClient.as_view()),
+    path('api-token-auth/', views.obtain_auth_token)
 ]

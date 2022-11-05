@@ -1,3 +1,4 @@
+import random
 from django.db.utils import DataError
 from .vcf_reader import read_vcf_data
 from api.infrastructure.models import Data
@@ -8,7 +9,7 @@ def db_load(path):
         for d in data:
             records, created = Data.objects.get_or_create(chrom=d[0],
                                                             pos=d[1],
-                                                            id_data=d[2],
+                                                            id_data= d[0] if d[0] != '.' else "rs"+ random.randrange(100, 1000000),
                                                             ref=d[3],
                                                             alt=d[4],
                                                             qual=d[5],

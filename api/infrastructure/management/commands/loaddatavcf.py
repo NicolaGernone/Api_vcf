@@ -1,5 +1,4 @@
 from db.populate_db import db_load
-from db.vcf_reader import read_vcf_data
 from django.core.management.base import BaseCommand, CommandError
 
 
