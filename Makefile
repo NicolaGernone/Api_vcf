@@ -23,7 +23,7 @@ loaddata:
 	docker compose run --rm api python manage.py loaddata data.json
 
 loaddatavcf:
-	docker compose run --rm api python manage.py loaddatavcf "NA12877_API_10.vcf.gz"
+	docker compose run --rm api python manage.py loaddatavcf "your_vcf.vcf.gz"
 
 deps: deps_lock
 	docker compose run --rm api poetry install
