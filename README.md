@@ -26,4 +26,9 @@ In the admin page you can manage the data loaded and the users and the Tokens fo
 
 ## Api endpoints
 
-The api spec are illustrated in the postman collection and the api.spec.yaml
+- GET: localhost:5050/data/<id>
+- POST: localhost:5050/update/
+- PUT: localhost:5050/update/<id>
+- DELETE: localhost:5050/delete/<id>
+  
+- TOKEN: loclahost:5050/api-token-auth/  add { username: your_user, password: user_password }
