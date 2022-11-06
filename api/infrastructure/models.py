@@ -1,3 +1,5 @@
-from django.db import models
+from api.application.domain.entity.vcf_entity import (Data)
 
-# Create your models here.
+__all__ = [ 
+    'Data'
+]
