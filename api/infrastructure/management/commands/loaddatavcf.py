@@ -11,7 +11,11 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         try:
             db_load(options['vcf_path'][0]) 
+            self.stdout.write(self.style.SUCCESS('Successfully uploded'))
         except IOError:
             raise CommandError('File does not exist')
 
         self.stdout.write(self.style.SUCCESS('Successfully closed'))
+            
+
+        
