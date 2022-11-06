@@ -12,6 +12,8 @@ In the [Makefile](/Makefile)
 
 - First Step:
 
+In the [Makefile](/Makefile) under loaddatavcf change the vcf file name with the new one, and make sure that is contained in the Api_vcf or puth the relative path with the name.
+
 In the terminal cd in Api_vcf repository and run the command `make first`.
 This command will build the docker and make all the migrations and run the server.
 It will load the vcf record in the DB too. Maximum record of 5000.
